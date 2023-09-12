@@ -1,22 +1,49 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
+const Card = ({ odontologo }) => {
 
-const Card = ({ name, username, id }) => {
+  const guardarLocalStorage = (clave, valor) => {
 
-  const addFav = ()=>{
-    // Aqui iria la logica para agregar la Card en el localStorage
+    localStorage.setItem(clave, JSON.stringify(valor))
+ 
+    return `Ha sido guardado`
   }
 
-  return (
-    <div className="card">
-        {/* En cada card deberan mostrar en name - username y el id */}
+  const consultarLocalStorage = () => {
 
-        {/* No debes olvidar que la Card a su vez servira como Link hacia la pagina de detalle */}
+    const listaDeCards = [];
+    const data = JSON.parse(localStorage.getItem("card"));
 
-        {/* Ademas deberan integrar la logica para guardar cada Card en el localStorage */}
+    if (data != null) {
+      data.map((element) => {
+        listaDeCards.push(element)
+      }
+      )
+    }
+    return listaDeCards;
+  }
+
+  const addFav = () => {
+
+    const listaDeCards = consultarLocalStorage();
+    listaDeCards.push(odontologo);
+  
+  const  mensaje = guardarLocalStorage("card", listaDeCards);
+  
+    alert(`El odontologo ${odontologo.name}` + " "+ mensaje )
+  }
+    return (
+  
+      <div className="card">
+        <img className="imagen-odontologo" src="./images/doctor.jpg" alt='Logo Doctor' />
+        <p>{odontologo.name}</p>
+        <p>{odontologo.id}</p>
+        <p>{odontologo.username}</p>
+        <Link to={`/dentist/${odontologo.id}`}>Detalle</Link>
         <button onClick={addFav} className="favButton">Add fav</button>
-    </div>
-  );
+      </div>
+    );
 };
 
 export default Card;

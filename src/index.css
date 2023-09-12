@@ -5,6 +5,7 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: #2e959cff;
 }
 
 code {
@@ -12,11 +13,13 @@ code {
     monospace;
 }
 .favButton{
-  background-color: rgba(136, 136, 136, 0.116);
+  background-color: #2e959cff;
   padding: 10px;
   border: none;
   width: 100%;
   cursor: pointer;
+  border-radius: 5px; 
+  box-shadow: 2px 2px 5px rgba(34, 37, 36, 0.3); 
 }
 
 h1{
@@ -25,7 +28,7 @@ h1{
 
 nav{
   display: flex;
-  width: 80vw;
+  width: 100%;
   justify-content: flex-start;
   padding: 1rem;
 }
@@ -47,9 +50,9 @@ footer {
   padding: 2rem;
   position: relative;
   bottom: 0;
-  width: 90%;
+  width: 100%;
   height: 40px;
-  margin-top: 2rem;
+  margin-top: 0rem;
 }
 
 footer > img{
@@ -57,6 +60,8 @@ footer > img{
   margin: 0;
 }
 footer > p{
+display: flex;
+justify-content: space-around;
   margin: 0;
   padding-top: 0.7rem;
 }
@@ -88,7 +93,7 @@ form{
   display: flex;
   justify-content: space-evenly;
   gap: 1rem;
-  width: 90vw;
+  width: 100%;
   height: auto;
   flex-wrap: wrap;
   margin: 0 auto;
@@ -119,4 +124,72 @@ tr:nth-child(even) {
 }
 .dark > a {
   color: white;
+}
+
+.imagen-odontologo{
+  width: 100%;
+}
+
+
+nav ul{
+display: flex;
+justify-content: flex-end;
+margin-top: 25px;
+list-style: none;
+width: 90vw;
+
+}
+
+nav ul li{
+  padding: 15px;
+  font-size: 30px;
+}
+
+nav.white ul li a{
+  color: white;
+}
+
+.div-mensaje{
+  background-color:#2e959cff;
+  width: 35%;
+  padding-left: 40px;
+  border: 2px solid #1a1a1b; 
+  border-radius: 5px; 
+  color: #fff; 
+  box-shadow: 2px 2px 5px rgba(9, 182, 96, 0.3); 
+}
+
+.div-contactos{
+  padding-left: 40px;
+  
+}
+
+button{
+  background-color: #2e959cff;
+  display: inline-block;
+  padding: 10px 20px; 
+  font-size: 16px; 
+  text-align: center;
+  text-decoration: none;
+  border: 2px solid #1a1a1b; 
+  border-radius: 5px; 
+  color: #fff; 
+  box-shadow: 2px 2px 5px rgba(9, 182, 96, 0.3); 
+  cursor: pointer;
+
+}
+
+.button-navar{
+  margin-right: 90px;
+  margin-top: 40px;
+  height: 55px;
+}
+
+.icono{
+  width: 25px;
+  height: 25px;
+  background-color: #4a4a4aff;
+  margin: 8px;
+  border: 0.2px solid #00000011;
+  box-shadow: 2px 2px 5px rgba(8, 8, 8, 0.3); 
 }
